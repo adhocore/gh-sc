@@ -1,0 +1,16 @@
+{
+    "manifest_version": 2,
+    "name": "gh-sc",
+    "description": "Cancel all but the last SC automatically.",
+    "version": "1.0",
+    "content_scripts": [{
+        "all_frames": true,
+        "js": ["gh-sc.js"],
+        "matches": ["http://*/*", "https://*/*"],
+        "run_at": "document_idle"
+    }],
+    "permissions": ["*://github.com/*", "*://scrutinizer-ci.com/*"],
+    "background": {
+        "page": "gh-sc-bkg.html"
+    }
+}
